@@ -43,14 +43,13 @@
         <p class="text-zinc-500 font-medium">Remplis ce formulaire avec précision pour postuler au roster.</p>
     </div>
 
-    <!-- Formulaire avec Formspree -->
+    <!-- Formulaire Formspree -->
     <form id="recruitmentForm" class="space-y-10"
           action="https://formspree.io/f/xlgwlrna" method="POST">
-        
-        <!-- Champ caché pour redirection vers une page Merci après envoi -->
-        <input type="hidden" name="_next" value="https://formulaire-zerlyx-esport.netlify.app/">
 
-        <!-- Les sections du formulaire restent inchangées -->
+        <!-- Redirection après envoi -->
+        <input type="hidden" name="_next" value="https://formulaire-zerlyx-esport.netlify.app/merci.html">
+
         <!-- Informations Générales -->
         <div class="form-section">
             <h3 class="text-red-500 text-xs font-black uppercase tracking-[0.2em] mb-6">Informations générales</h3>
@@ -121,12 +120,11 @@
             </div>
         </div>
 
-        <!-- In Game, Mise en situation et Conclusion restent inchangés -->
+        <!-- Tu peux ajouter les sections In Game, Mise en situation et Conclusion comme précédemment -->
 
         <button type="submit" class="w-full py-5 bg-red-600 hover:bg-red-700 text-white font-black uppercase tracking-[0.3em] text-xs rounded-xl shadow-[0_0_30px_rgba(220,38,38,0.2)] transition-all transform hover:-translate-y-1">
             Envoyer la candidature
         </button>
-
     </form>
 
     <footer class="mt-20 py-8 border-t border-zinc-900 text-center">
@@ -134,7 +132,6 @@
     </footer>
 </main>
 
-<!-- Plus besoin de script de simulation -->
 </body>
 </html>
 
