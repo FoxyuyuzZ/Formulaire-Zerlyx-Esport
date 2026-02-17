@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recrutement - Valorant Pro Analytics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .form-section { border-left: 3px solid #dc2626; padding-left: 1.5rem; margin-bottom: 3rem; }
+        input, textarea, select {
+            background: #18181b !important;
+            border: 1px solid #27272a !important;
+            color: #f4f4f5 !important;
+            transition: all 0.2s ease;
+        }
+        input:focus, textarea:focus {
+            border-color: #dc2626 !important;
+            ring: 1px solid #dc2626;
+            outline: none;
+        }
+        .bg-gradient-valorant {
+            background: linear-gradient(135deg, #09090b 0%, #18181b 100%);
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 min-h-screen">
+
+    <header class="border-b border-zinc-800 bg-zinc-950/50 sticky top-0 z-50 backdrop-blur-xl">
+        <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <div class="h-8 w-8 bg-red-600 rounded flex items-center justify-center font-black italic">V</div>
+                <h1 class="text-sm font-extrabold uppercase tracking-widest leading-none">Candidature Roster</h1>
+            </div>
+            <a href="index.html" class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 hover:text-white transition-colors">Retour Analytics</a>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 py-12">
+        <div class="mb-12">
+            <h2 class="text-4xl font-black uppercase tracking-tighter mb-2">Rejoindre l'équipe</h2>
+            <p class="text-zinc-500 font-medium">Remplis ce formulaire avec précision pour postuler au roster.</p>
+        </div>
+
+        <form id="recruitmentForm" class="space-y-10">
+            
+            <!-- Informations Générales -->
+            <div class="form-section">
+                <h3 class="text-red-500 text-xs font-black uppercase tracking-[0.2em] mb-6">Informations générales</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-zinc-400">Prénom</label>
+                        <input type="text" name="firstname" required class="w-full p-3 rounded-lg text-sm">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-zinc-400">Âge</label>
+                        <input type="number" name="age" required class="w-full p-3 rounded-lg text-sm">
+                    </div>
+                    <div class="md:col-span-2 space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-zinc-400">Disponibilités (jours + heures)</label>
+                        <input type="text" name="availabilities" placeholder="Ex: Lundi-Vendredi (18h-23h)" required class="w-full p-3 rounded-lg text-sm">
+                    </div>
+                    <div class="md:col-span-2 space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-zinc-400">Objectif personnel sur Valorant</label>
+                        <select name="objective" class="w-full p-3 rounded-lg text-sm appearance-none">
+                            <option value="fun">Fun</option>
+                            <option value="progression">Progression</option>
+                            <option value="competition">Compétition</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profil Valorant -->
+            <div class="form-section">
+                <h3 class="text-red-500 text-xs font-black uppercase tracking-[0.2em] mb-6">🔹 Profil Valorant</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-zinc-400">Pseudo Ingame</label>
+                        <input type="text" name="pseudo" placeholder="Nom#TAG" required class="w-full p-3 rounded-lg text-sm">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-zinc-400">Rank actuel</label>
+                        <input type="text" name="rank" required class="w-full p-3 rounded-lg text-sm">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-zinc-400">Peak rank</label>
+                        <input type="text" name="peak" required class="w-full p-3 rounded-lg text-sm">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-zinc-400">Lien Valorant Tracker</label>
+                        <input type="url" name="tracker" placeholder="https://tracker.gg/..." class="w-full p-3 rounded-lg text-sm">
+                    </div>
+                    <div class="md:col-span-2 space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-zinc-400">Rôles joués</label>
+                        <input type="text" name="roles" placeholder="Ex: Initiateur, Dueliste" class="w-full p-3 rounded-lg text-sm">
+                    </div>
+                    <div class="md:col-span-2 space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-zinc-400">Main(s)</label>
+                        <input type="text" name="mains" placeholder="Ex: Sova, Jett" class="w-full p-3 rounded-lg text-sm">
+                    </div>
+                    <div class="md:col-span-2 space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-zinc-400">Expérience en team / roster</label>
+                        <textarea name="experience" rows="3" class="w-full p-3 rounded-lg text-sm"></textarea>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-zinc-400">Tes principales qualités</label>
+                        <textarea name="qualities" rows="3" class="w-full p-3 rounded-lg text-sm"></textarea>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-zinc-400">Tes défauts ou points à améliorer</label>
+                        <textarea name="defects" rows="3" class="w-full p-3 rounded-lg text-sm"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- In Game -->
+            <div class="form-section">
+                <h3 class="text-red-500 text-xs font-black uppercase tracking-[0.2em] mb-6">In game</h3>
+                <div class="space-y-6">
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-zinc-400">Comment réagis-tu après une mauvaise game ou une série de défaites ?</label>
+                        <textarea name="reaction_loss" rows="3" class="w-full p-3 rounded-lg text-sm"></textarea>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-zinc-400">Comment décrirais-tu ton style de jeu ? (agressif / patient / calculé...)</label>
+                        <textarea name="style" rows="3" class="w-full p-3 rounded-lg text-sm"></textarea>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-zinc-400">Tu te définis plutôt comme :</label>
+                        <select name="profile_type" class="w-full p-3 rounded-lg text-sm appearance-none">
+                            <option value="aim">Aim-oriented (duel, mécanique)</option>
+                            <option value="strat">Strat-oriented (placement, timings, calls)</option>
+                            <option value="balanced">Équilibré entre les deux</option>
+                        </select>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-zinc-400">Comment décrirais-tu ta communication en game ?</label>
+                        <textarea name="comms" rows="2" class="w-full p-3 rounded-lg text-sm"></textarea>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-zinc-400">Es-tu prêt à recevoir des critiques constructives et à remettre ton gameplay en question ?</label>
+                        <select name="feedback_ready" class="w-full p-3 rounded-lg text-sm appearance-none">
+                            <option value="oui">Oui, absolument</option>
+                            <option value="non">Non</option>
+                        </select>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-zinc-400">Selon toi, le rank reflète-t-il toujours le vrai niveau d’un joueur ? Pourquoi ?</label>
+                        <textarea name="rank_opinion" rows="3" class="w-full p-3 rounded-lg text-sm"></textarea>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-zinc-400">Penses-tu que des joueurs “bas rank” peuvent atteindre un haut niveau grâce à une team structurée ?</label>
+                        <textarea name="low_rank_potential" rows="3" class="w-full p-3 rounded-lg text-sm"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mise en situation -->
+            <div class="form-section">
+                <h3 class="text-red-500 text-xs font-black uppercase tracking-[0.2em] mb-6">Mise en situation</h3>
+                <p class="text-[11px] text-zinc-500 mb-4 italic leading-relaxed">Tu rejoins un roster où certains joueurs ont un rank plus bas que le tien, mais sont motivés, disciplinés et veulent progresser.</p>
+                <div class="space-y-2">
+                    <label class="text-[10px] font-bold uppercase text-zinc-400">Quelle est ton attitude et comment vois-tu la progression du groupe ?</label>
+                    <textarea name="scenario_attitude" rows="4" class="w-full p-3 rounded-lg text-sm"></textarea>
+                </div>
+            </div>
+
+            <!-- Conclusion -->
+            <div class="form-section border-zinc-700">
+                <h3 class="text-red-500 text-xs font-black uppercase tracking-[0.2em] mb-6">Motivations finales</h3>
+                <div class="space-y-6">
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-zinc-400">Pourquoi veux-tu rejoindre ce roster ?</label>
+                        <textarea name="why_us" rows="3" class="w-full p-3 rounded-lg text-sm"></textarea>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-zinc-400">Pourquoi devrions-nous te recruter toi plutôt qu’un autre joueur ?</label>
+                        <textarea name="why_you" rows="3" class="w-full p-3 rounded-lg text-sm"></textarea>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-zinc-400">Qu’attends-tu de ce roster sur le court et long terme ?</label>
+                        <textarea name="expectations" rows="3" class="w-full p-3 rounded-lg text-sm"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="w-full py-5 bg-red-600 hover:bg-red-700 text-white font-black uppercase tracking-[0.3em] text-xs rounded-xl shadow-[0_0_30px_rgba(220,38,38,0.2)] transition-all transform hover:-translate-y-1">
+                Envoyer la candidature
+            </button>
+
+        </form>
+
+        <footer class="mt-20 py-8 border-t border-zinc-900 text-center">
+            <p class="text-[10px] font-bold text-zinc-600 uppercase tracking-widest">Valorant Pro Analytics &copy; 2024</p>
+        </footer>
+    </main>
+
+    <script>
+        document.getElementById('recruitmentForm').onsubmit = function(e) {
+            e.preventDefault();
+            
+            // Simulation d'envoi
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+            
+            btn.innerText = "ENVOI EN COURS...";
+            btn.disabled = true;
+            btn.style.opacity = "0.5";
+
+            setTimeout(() => {
+                alert("Candidature envoyée avec succès ! (Simulation)");
+                btn.innerText = "CANDIDATURE ENVOYÉE";
+                btn.classList.replace('bg-red-600', 'bg-zinc-800');
+            }, 1500);
+        };
+    </script>
+
+</body>
+</html>
